@@ -12,7 +12,10 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-
+	const rsvp = { name: "JENS" };
+	db.writeRSVP(rsvp.name, (err, rsvps) => {
+		res.status(200).json(rsvps);		
+	});
 });
 
 module.exports = router;
