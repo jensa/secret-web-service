@@ -15,8 +15,8 @@ db((err, client) => {
 	const createTable = "CREATE TABLE IF NOT EXISTS rsvp (" +
 												"id SERIAL PRIMARY KEY,"
 												"name VARCHAR(255) NOT NULL," +
-												"time INTEGER NOT NULL"
-											")"
+												"time INTEGER NOT NULL" +
+											");":
 	client.query(createTable, (err, res) => {
 		if (err) {
 			console.log(`create table error: ${err}`);	
