@@ -44,5 +44,5 @@ function readRSVPs(callback) {
 
 module.exports = {
 	writeRSVP,
-	readRSVP
+	readRSVPs
 };
