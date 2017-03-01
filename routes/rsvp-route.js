@@ -17,11 +17,11 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
 	const rsvp = { name: "JENS" };
-	db.writeRSVP(rsvp.name, (err, res) => {
+	db.writeRSVP(rsvp.name, (err, dbres) => {
 		if (err) {
 			res.status(500).json(err);
 		} else {
-			res.status(200).json(res);
+			res.status(200).json(dbres);
 		}
 	});
 });
