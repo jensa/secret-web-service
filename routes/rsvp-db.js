@@ -17,6 +17,7 @@ db((err, client) => {
 												"name VARCHAR(255) NOT NULL," +
 												"time INTEGER NOT NULL" +
 											");";
+	console.log(createTable);
 	client.query(createTable, (err, res) => {
 		if (err) {
 			console.log(`create table error: ${err}`);	
