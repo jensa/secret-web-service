@@ -14,8 +14,8 @@
   "dependencies": {
     "body-parser": "~1.13.2",
     "express": "~4.13.1",
-    "jsonminify": "^0.4.1",
     "morgan": "~1.6.1",
+    "pg": "^6.1.2",
     "underscore": "^1.8.3"
   }
 }
