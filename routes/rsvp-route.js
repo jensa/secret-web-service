@@ -3,8 +3,16 @@
 const express = require('express');
 const router = express.Router();
 
+const db = require('./rsvp-db');
+
 router.get('/', (req, res) => {
-	res.status(200).json({  funkar: "JA" });	
+	db.readRSVPs((err, rsvps) => {
+		res.status(200).json(rsvps);		
+	});
+});
+
+router.post('/', (req, res) => {
+
 });
 
 module.exports = router;
