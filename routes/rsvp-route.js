@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-	db.writeRSVP(req.body.name, req.body.message, (err, dbres) => {
+	db.writeRSVP(req.body.person, req.body.message, (err, dbres) => {
 		if (err) {
 			console.log(err);
 			res.status(500).json(err);
