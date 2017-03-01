@@ -16,13 +16,13 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-	const rsvp = { name: "JENS" };
+	const rsvp = { name: req.body.name , message:req.body.message};
 	db.writeRSVP(rsvp.name, (err, dbres) => {
 		if (err) {
 			console.log(err);
 			res.status(500).json(err);
 		} else {
-			res.status(200).json(dbres);
+			res.redirect('/rsvp');
 		}
 	});
 });

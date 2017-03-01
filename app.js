@@ -4,6 +4,7 @@ const logger = require('morgan');
 const bodyParser = require('body-parser');
 
 const rsvp = require('./routes/rsvp-route');
+const GG = require('./routes/home');
 
 const app = express();
 
@@ -11,6 +12,7 @@ app.use(logger('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use('/rsvp', rsvp);
+app.use('/', GG);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
