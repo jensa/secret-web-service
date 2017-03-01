@@ -1,11 +1,20 @@
 <html>
+<head>
+  <script type="text/javascript">
+  window.onload = function(){
+      document.getElementById("name-input").value = document.location.pathname;
+  }
+  </script>
+</head>
 <body style="background:#00E200;">
+
   <div style="margin:auto;text-align:center;margin-top:200px;">
     <h1>RSVP</h1>
-  <form action="/rsvp" method="put">
+  <form  method="put">
     <dl>
-    <dd style="-webkit-margin-start:0px;"><textarea cols="40" rows="5" id="message" style="display:inline-block;"></textarea></dd>
+    <dd style="-webkit-margin-start:0px;"><textarea cols="40" rows="5" name="message" style="display:inline-block;"></textarea></dd>
     <dd style="-webkit-margin-start:0px;"><button style="margin-top:30px;">SKICKA BA</button></dd>
+    <input type="hidden" name="person" id="name-input"></input>
 </dl>
   </form>
 </div>
