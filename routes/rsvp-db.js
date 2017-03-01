@@ -12,7 +12,7 @@ function db(callback) {
 }
 
 db((err, client) => {
-	const createTable = "CREATE TABLE IF NOT EXISTS rsvp (id SERIAL PRIMARY KEY, name VARCHAR(255) NOT NULL, time BIGINT NOT NULL);";
+	const createTable = "CREATE TABLE IF NOT EXISTS rsvp (id SERIAL PRIMARY KEY, name VARCHAR(255) NOT NULL, message VARCHAR(255) NOT NULL, time BIGINT NOT NULL);";
 
 	client.query(createTable, (err, res) => {
 		if (err) {
@@ -23,9 +23,9 @@ db((err, client) => {
 	})
 });
 
-function writeRSVP(name, callback) {
+function writeRSVP(name, message, callback) {
 	db((err, client) => {
-		client.query('INSERT INTO rsvp VALUES (DEFAULT, $1, $2)', [ name, Date.now() ], (err, res) => {
+		client.query('INSERT INTO rsvp VALUES (DEFAULT, $1, $2, $3)', [ name, message, Date.now() ], (err, res) => {
 			callback(err, res);
 		});
 	});
