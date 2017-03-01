@@ -16,7 +16,7 @@ db((err, client) => {
 												"id SERIAL PRIMARY KEY,"
 												"name VARCHAR(255) NOT NULL," +
 												"time INTEGER NOT NULL" +
-											");":
+											");";
 	client.query(createTable, (err, res) => {
 		if (err) {
 			console.log(`create table error: ${err}`);	
