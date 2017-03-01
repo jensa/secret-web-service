@@ -2,7 +2,8 @@
 <head>
   <script type="text/javascript">
   window.onload = function(){
-      document.getElementById("name-input").value = document.location.pathname;
+    var gg = document.location.pathname;
+      document.getElementById("name-input").value = gg.substr(1,gg.length);
   }
   </script>
 </head>
