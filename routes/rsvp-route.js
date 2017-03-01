@@ -16,8 +16,7 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-	const rsvp = { name: req.body.name , message:req.body.message};
-	db.writeRSVP(rsvp.name, (err, dbres) => {
+	db.writeRSVP(req.body.name, req.body.message, (err, dbres) => {
 		if (err) {
 			console.log(err);
 			res.status(500).json(err);
