@@ -7,14 +7,22 @@ const db = require('./rsvp-db');
 
 router.get('/', (req, res) => {
 	db.readRSVPs((err, rsvps) => {
-		res.status(200).json(rsvps);		
+		if (err) {
+			res.status(500).json(err);
+		} else {
+			res.status(200).json(rsvps);
+		}
 	});
 });
 
 router.post('/', (req, res) => {
 	const rsvp = { name: "JENS" };
-	db.writeRSVP(rsvp.name, (err, rsvps) => {
-		res.status(200).json(rsvps);		
+	db.writeRSVP(rsvp.name, (err, res) => {
+		if (err) {
+			res.status(500).json(err);
+		} else {
+			res.status(200).json(res);
+		}
 	});
 });
 
